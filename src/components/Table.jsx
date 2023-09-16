@@ -23,8 +23,8 @@ function Table({ table }) {
           </thead>
           <tbody className="text-xs bg-white">
             {table.table.map((row, index) => (
-              <tr>
-                {index < 100 ? (
+              <tr key={index}>
+                {index < 2 ? (
                   header.map((header, index) => (
                     <td className="p-2 text-center border" key={index}>
                       {row[header]}

@@ -1,11 +1,32 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { Suspense, lazy, useMemo, useState } from "react";
 import "./App.css";
-import Editor from "./pages/Editor";
+import { MyContext } from "./context/context";
+import { get_default_query } from "./utils/data";
 
+const Editor = lazy(() => import("./pages/Editor"));
 function App() {
-  return <Editor />;
+  const [currentQuery, setCurrentQuery] = useState(get_default_query());
+  const [output, setOutput] = useState("");
+  const [historyQueries, setHistoryQueries] = useState([]);
+
+  const context = useMemo(
+    () => ({
+      currentQuery,
+      setCurrentQuery,
+      historyQueries,
+      setHistoryQueries,
+      output,
+      setOutput,
+    }),
+    [currentQuery, historyQueries, output]
+  );
+  return (
+    <MyContext.Provider value={context}>
+      <Suspense fallback={<div>Loading ...</div>}>
+        <Editor />
+      </Suspense>
+    </MyContext.Provider>
+  );
 }
 
 export default App;

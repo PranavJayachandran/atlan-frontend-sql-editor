@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { get_table } from "../utils/data";
+import { MyContext } from "../context/context";
 
-function Edit({ currentQuery, setCurrentQuery, setHistoryQueries, setOutput }) {
+function Edit() {
+  const { currentQuery, setCurrentQuery, setHistoryQueries, setOutput } =
+    useContext(MyContext);
   const runquery = () => {
     if (currentQuery === "SELECT companyName,contactName FROM customers;") {
       let update_query = {
@@ -38,6 +41,7 @@ function Edit({ currentQuery, setCurrentQuery, setHistoryQueries, setOutput }) {
       </div>
       <div className="h-full ">
         <textarea
+          label="editor"
           className="w-full py-2 h-full bg-stone-100 px-4"
           value={currentQuery}
           onChange={(e) => {

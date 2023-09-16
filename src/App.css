@@ -4,10 +4,7 @@ textarea {
   border: none;
   outline: none;
 }
-body {
-  font-family: "Nunito", "sans-serif";
-  font-weight: 400;
-}
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -25,8 +22,8 @@ body {
 }
 
 .scrollhide {
-  -ms-overflow-style: none;  
-  scrollbar-width: none; 
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 @keyframes logo-spin {
