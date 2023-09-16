@@ -8,7 +8,7 @@ function HistoryQueries({ setCurrentQuery }) {
   }, []);
   return (
     <div className="mx-6 h-full  items-center py-4 flex flex-col gap-4 border-b">
-      <div className="font-bold underline">History</div>
+      <div className="font-bold underline">Histor</div>
       <div>
         {queries.map((query) => (
           <button
