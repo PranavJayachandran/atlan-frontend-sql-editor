@@ -1,26 +1,34 @@
-const get_data = () => {
-    ;
-}
+import customers from "../assets/customers.csv";
+import orders from "../assets/orders.csv";
+import customersquery from "../assets/customersquery.csv";
+import ordersquery from "../assets/ordersquery.csv";
+
 const get_queries = () => {
     let queries = [
-        "SELECT * FROM ABC",
-        "SELECT id, name from customers"
+        "SELECT companyName,contactName FROM customers;",
+        "SELECT orderID, customerID from orders;"
     ]
     return queries;
 }
 const get_history_queries = () => {
     let queries = [
-        { query: "SELECT * FROM abc;", output: "table1" },
-        { query: "SELECT id, name from customers;", output: "table2" }
+        { query: "SELECT companyName,contactName FROM customers;", output: "customersquery" },
+        { query: "SELECT orderID, customerID from orders;", output: "ordersquery" }
     ]
     return queries;
 }
 
 const get_default_query = () => {
-    return "SELECT * from abc;";
-}
-const get_default_table = () => {
-    return "Table 1"
+    return "SELECT companyName,contactName FROM customers;";
 }
 
-export { get_data, get_queries, get_history_queries, get_default_query, get_default_table };
+const get_tables = () => {
+    return [{ name: "customers", table: customers }, { name: "order", table: orders }]
+}
+const get_table = (table_name) => {
+    console.log(table_name);
+    if (table_name == "customersquery") { console.log("REturn"); return { name: "customersquery", table: customersquery }; }
+    else
+        return { name: "orderquery", table: ordersquery };
+}
+export { get_queries, get_history_queries, get_default_query, get_tables, get_table };

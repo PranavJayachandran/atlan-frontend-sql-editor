@@ -4,14 +4,14 @@ import HistoryQueries from "../components/HistoryQueries";
 import Edit from "../components/Edit";
 import { get_default_query } from "../utils/data";
 import Output from "../components/Output";
+import Tables from "../components/Tables";
 
 const Editor = () => {
-  const [currentQuery, setCurrentQuery] = useState({});
+  const [currentQuery, setCurrentQuery] = useState("");
+  const [output, setOutput] = useState("");
+  const [historyQueries, setHistoryQueries] = useState([]);
   useEffect(() => {
-    setCurrentQuery({
-      query: get_default_query(),
-      output: "",
-    });
+    setCurrentQuery(get_default_query());
   }, []);
   return (
     <div className="">
@@ -21,18 +21,27 @@ const Editor = () => {
           <Queries
             currentQuery={currentQuery}
             setCurrentQuery={setCurrentQuery}
+            setOutput={setOutput}
           />
-          <HistoryQueries setCurrentQuery={setCurrentQuery} />
+          <HistoryQueries
+            setCurrentQuery={setCurrentQuery}
+            historyQueries={historyQueries}
+            setOutput={setOutput}
+          />
         </div>
         <div className="h-full flex w-5/6">
           <div className="flex h-full flex-col gap-10 w-3/5">
             <Edit
               currentQuery={currentQuery}
               setCurrentQuery={setCurrentQuery}
+              setHistoryQueries={setHistoryQueries}
+              setOutput={setOutput}
             />
-            <Output currentQuery={currentQuery} />
+            <Output output={output} />
           </div>
-          <div className="">Tables</div>
+          <div className="w-2/5 ">
+            <Tables />
+          </div>
         </div>
       </div>
     </div>

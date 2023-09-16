@@ -20,6 +20,14 @@ body {
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
+.scrollhide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollhide {
+  -ms-overflow-style: none;  
+  scrollbar-width: none; 
+}
 
 @keyframes logo-spin {
   from {
