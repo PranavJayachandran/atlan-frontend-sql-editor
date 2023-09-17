@@ -1,12 +1,6 @@
 import React, { useContext } from "react";
 import { MyContext } from "../context/context";
-import AceEditor from "react-ace";
 import { BsMoon, BsFillMoonFill } from "react-icons/bs";
-
-import "ace-builds/src-noconflict/mode-mysql";
-import "ace-builds/src-noconflict/theme-xcode";
-import "ace-builds/src-noconflict/theme-twilight";
-import "ace-builds/src-noconflict/ext-language_tools";
 
 function Edit() {
   const {
@@ -66,25 +60,12 @@ function Edit() {
         </div>
       </div>
       <div className="h-full ">
-        <AceEditor
-          mode="mysql"
-          theme={dark === true ? "twilight" : "xcode"}
-          onChange={(e) => {
-            setCurrentQuery(e);
-          }}
-          height={200}
-          width={630}
-          fontSize={14}
-          showPrintMargin={true}
-          showGutter={true}
-          highlightActiveLine={true}
+        <textarea
+          label="editor"
+          className="w-full py-2 h-full bg-stone-100 px-4"
           value={currentQuery}
-          setOptions={{
-            enableBasicAutocompletion: false,
-            enableLiveAutocompletion: false,
-            enableSnippets: false,
-            showLineNumbers: true,
-            tabSize: 2,
+          onChange={(e) => {
+            setCurrentQuery(e.target.value);
           }}
         />
       </div>
