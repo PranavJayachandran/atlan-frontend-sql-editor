@@ -6,7 +6,7 @@ const Queries = () => {
   let queries = get_queries();
   const { setCurrentQuery, setOutput, dark } = useContext(MyContext);
   return (
-    <div className="mx-6 -mt-14 items-center py-4 flex flex-col gap-4 border-b border-stone-500">
+    <div className="mx-6 sm:-mt-14 items-center py-4 flex flex-col gap-4 border-b border-stone-500">
       <div className="font-bold underline">Queries</div>
       <div className="flex flex-col gap-2">
         {queries.map((query, index) => (

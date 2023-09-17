@@ -8,7 +8,7 @@ function Output() {
     <div
       className={` ${
         dark === true ? "bg-[#1f2023]" : " bg-[#f9fafc]"
-      } px-4 h-[300px] border border-stone-500`}
+      } px-4 h-[330px] sm:h-[300px] border border-stone-500`}
     >
       <div className="pt-2 pb-1 text-lg font-bold border-b">Output</div>
       <div className="py-2">

@@ -31,13 +31,13 @@ function Edit() {
     }
   };
   return (
-    <div className="h-48">
+    <div className="h-48 sm:px-[0px] px-2 ">
       <div className="flex">
-        <div className="w-2/12 bg-stone-100">
+        <div className="sm:w-2/12 bg-stone-100">
           <h2
             className={`text-lg ${
               dark === true ? "bg-[#1f2023]" : ""
-            } text-center font-bold px-4 py-1 border-r border-stone-500`}
+            } border-t text-center font-bold px-4 py-1 border-r border-stone-500`}
           >
             Input
           </h2>
@@ -62,7 +62,9 @@ function Edit() {
       <div className="h-full ">
         <textarea
           label="editor"
-          className="w-full py-2 h-full bg-stone-100 px-4"
+          className={`w-full py-2 h-full ${
+            dark === true ? "bg-black" : "bg-stone-100"
+          } px-4`}
           value={currentQuery}
           onChange={(e) => {
             setCurrentQuery(e.target.value);

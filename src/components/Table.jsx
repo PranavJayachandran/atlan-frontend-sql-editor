@@ -13,9 +13,18 @@ function Table({ table }) {
   let isoutput = data.name[data.name.length - 1] == "y" ? false : true;
 
   const left = () => {
+    let table_size = get_size(table);
     if (start > 0) {
-      setStart(start - 10);
-      setEnd(end - 10);
+      if (end == table_size && start != end - 10) setStart(end - 10);
+      else {
+        if (start - 10 < 0) {
+          setStart(0);
+          setEnd(10);
+        } else {
+          setStart(start - 10);
+          setEnd(end - 10);
+        }
+      }
     }
   };
   const right = () => {
@@ -30,7 +39,7 @@ function Table({ table }) {
   };
   useEffect(() => {
     setData(get_table(table, start, end));
-  }, [start, end]);
+  }, [start, end, output]);
   useEffect(() => {
     setStart(0);
     setEnd(10);
@@ -52,7 +61,7 @@ function Table({ table }) {
         </div>
       </div>
       <div
-        className={`flex h-[220px] overflow-scroll  ${
+        className={`flex h-[200px] overflow-auto  ${
           isoutput ? "" : "justify-center"
         }`}
       >

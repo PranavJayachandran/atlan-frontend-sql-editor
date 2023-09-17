@@ -5,7 +5,7 @@ import Table from "./Table";
 function Tables() {
   let tables = get_table_names();
   return (
-    <div className="">
+    <div className="sm:px-[0px] px-2 ">
       <div className="border-b px-4 ">
         <h2 className="text-lg font-bold py-1 ">Available Tables</h2>
       </div>
