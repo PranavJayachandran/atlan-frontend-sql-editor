@@ -1,26 +1,34 @@
 # :computer: Atlan Frontend Task: Mastering SQL Queries
-<strong> Link to the application: https://atlan-frontend-task.vercel.app/</strong>
+<strong> Link to the application: https://atlan-frontend-sql-editor.vercel.app/</strong>
 <br>
 
 ## Introduction
 
 This particular project was created as part of Atlan hiring process for Frontend Intern Role. The problem statement for teh same is present towards the end.
 
-## Page Speed and Optimisation
+## Project Features
 
-### Lazy Loading has been used for the main page, to make the page show some message ("Loading....") and not leave the user with a blank screen.
-### The tables are being paginated, which in this case where data too is present in the frontend won't have much of a differnece but the same when a backend is involved would be helpful.
-### The Functions to get table related data are written such that it can easily accomodate a backend with minimal change in the existing code.
-### The run time for page are shown in the attached screenshots
+Lazy Loading has been used for the main page, to make the page show some message ("Loading....") and not leave the user with a blank screen.
+
+The tables are being paginated, which in this case where data is present in the frontend won't have much of a difference but the same when a backend is involved would be helpful.
+
+The functions to get table-related data are written such that they can easily accommodate a backend with minimal change in the existing code.
+
+The run time for the page are shown in the attached screenshots
 
 ## Screenshots
-
-
 ### Page Load Times (Google Lighthouse used, in Incognito Browser Mode in Google Chrome)
-
 <strong>Load Time (Desktop) : 0.7 seconds</strong>
-  
-![Screenshot 2021-08-30 at 5.52.12 PM](https://drive.google.com/file/d/1hV3BsNK1MPyRDUAngcObLIJR5qTyGWPc/view?usp=sharing)
+![DesktopTime](https://drive.google.com/uc?export=view&id=1hV3BsNK1MPyRDUAngcObLIJR5qTyGWPc)
+<strong>Load Time (Mobile) : 1.7 seconds</strong>
+![MobileTime](https://drive.google.com/uc?export=view&id=1h4Lh_ZjmO5hp6QwWZOa4-OIKkWBhYX8d)
+
+### Performace (Google Lighthouse used, in Incognito Browser Mode in Google Chrome)
+<strong>Desktop</strong>
+![Desktop](https://drive.google.com/uc?export=view&id=1eNl8V7U2ywv1dJv_wGBki7B50Hu8BGvo)
+<strong>Mobile</strong>
+![Mobile](https://drive.google.com/uc?export=view&id=1r0_2gpwnHHW310L39M5XGnp9l1VIKRyB)
+
 
 
 ## Problem Statement
