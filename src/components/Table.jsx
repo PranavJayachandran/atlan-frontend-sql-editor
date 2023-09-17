@@ -5,7 +5,7 @@ import { MyContext } from "../context/context";
 
 function Table({ table }) {
   const { dark, output } = useContext(MyContext);
-  if (table == "output") table = output;
+  const [speed, setSpeed] = useState("");
   const [start, setStart] = useState(0);
   const [end, setEnd] = useState(10);
   const [data, setData] = useState(get_table(table, start, end));
@@ -43,11 +43,22 @@ function Table({ table }) {
   useEffect(() => {
     setStart(0);
     setEnd(10);
+    if (table[table.length - 1] == "y") {
+      setSpeed(get_size(table) + " rows in (0.03sec)");
+    }
   }, [table]);
   return (
     <div className="">
       <div className="font-bold mb-2 flex justify-between">
-        <div>{isoutput ? table : ""}</div>
+        <div>
+          {isoutput ? (
+            table
+          ) : (
+            <div className={`${dark === true ? "text-stone-300" : ""} text-xs`}>
+              {speed}
+            </div>
+          )}
+        </div>
         <div className="flex gap-4">
           <button onClick={left} aria-label="right">
             <AiFillCaretLeft />
@@ -60,6 +71,7 @@ function Table({ table }) {
           </button>
         </div>
       </div>
+
       <div
         className={`flex h-[200px] overflow-auto  ${
           isoutput ? "" : "justify-center"
