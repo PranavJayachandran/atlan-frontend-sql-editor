@@ -20,6 +20,7 @@ const Queries = () => {
               setCurrentQuery(query);
               setOutput("");
             }}
+            aria-label="query"
             key={index}
           >
             {query}

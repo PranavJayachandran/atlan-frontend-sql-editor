@@ -49,13 +49,13 @@ function Table({ table }) {
       <div className="font-bold mb-2 flex justify-between">
         <div>{isoutput ? table : ""}</div>
         <div className="flex gap-4">
-          <button onClick={left}>
+          <button onClick={left} aria-label="right">
             <AiFillCaretLeft />
           </button>
           <div>
             {start}:{end}
           </div>
-          <button onClick={right}>
+          <button onClick={right} aria-label="left">
             <AiFillCaretRight />
           </button>
         </div>

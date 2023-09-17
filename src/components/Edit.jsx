@@ -48,12 +48,14 @@ function Edit() {
               dark ? "text-white" : ""
             } border-stone-300 py-1 px-2`}
             onClick={() => setDark(!dark)}
+            aria-label="theme"
           >
             {dark === false ? <BsMoon /> : <BsFillMoonFill />}
           </button>
           <button
             className="py-1 text-sm bg-[#0047d1] rounded-xl text-white px-4 transition border border-[#0047d1] hover:bg-white hover:text-[#0047d1]"
             onClick={runquery}
+            aria-label="runsql"
           >
             Run SQL
           </button>
@@ -61,7 +63,8 @@ function Edit() {
       </div>
       <div className="h-full ">
         <textarea
-          label="editor"
+          aria-labelledby="editor"
+          type="text"
           className={`w-full py-2 h-full ${
             dark === true ? "bg-black" : "bg-stone-100"
           } px-4`}

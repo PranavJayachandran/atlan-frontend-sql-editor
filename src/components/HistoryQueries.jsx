@@ -19,6 +19,7 @@ function HistoryQueries() {
               setCurrentQuery(query.query);
               setOutput(query.output);
             }}
+            aria-label="choosehistory"
             key={index}
           >
             {query.query}
