@@ -4,7 +4,7 @@
 
 ## Introduction
 
-This particular project was created as part of Atlan hiring process for Frontend Intern Role. The problem statement for the same is present towards the end.
+This particular project was created as part of Atlan hiring process for Frontend Developer. The problem statement for the same is present towards the end.
 
 ## Project Features
 
