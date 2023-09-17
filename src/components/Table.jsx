@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { get_size, get_table } from "../utils/data";
 import { AiFillCaretLeft, AiFillCaretRight } from "react-icons/ai";
+import { MyContext } from "../context/context";
 
 function Table({ table }) {
+  const { dark, output } = useContext(MyContext);
+  if (table == "output") table = output;
   const [start, setStart] = useState(0);
   const [end, setEnd] = useState(10);
   const [data, setData] = useState(get_table(table, start, end));
-
   let header = Object.keys(data.table[0]);
   let isoutput = data.name[data.name.length - 1] == "y" ? false : true;
 
@@ -29,8 +31,12 @@ function Table({ table }) {
   useEffect(() => {
     setData(get_table(table, start, end));
   }, [start, end]);
+  useEffect(() => {
+    setStart(0);
+    setEnd(10);
+  }, [table]);
   return (
-    <div className=" ">
+    <div className="">
       <div className="font-bold mb-2 flex justify-between">
         <div>{isoutput ? table : ""}</div>
         <div className="flex gap-4">
@@ -46,25 +52,34 @@ function Table({ table }) {
         </div>
       </div>
       <div
-        className={`flex ${
+        className={`flex h-[220px] overflow-scroll  ${
           isoutput ? "" : "justify-center"
-        } overflow-scroll h-60`}
+        }`}
       >
-        <table className="rounded-md bg-blue-100 ">
-          <thead className="text-sm">
+        <table
+          className={`rounded-md  ${
+            dark === true ? "bg-stone-800" : "bg-blue-100"
+          } `}
+        >
+          <thead className="text-sm ">
             <tr className="rounded-xl">
-              {header.map((header, index) => (
-                <th className="p-2 border-r" key={index}>
-                  {header.substr(0, 10)}
+              {header.map((element, index) => (
+                <th className="p-2 border-r border-stone-500" key={index}>
+                  {element.substr(0, 10)}
                 </th>
               ))}
             </tr>
           </thead>
-          <tbody className="text-xs bg-white">
+          <tbody
+            className={`text-xs ${dark === true ? "bg-[#1f2023]" : "bg-white"}`}
+          >
             {data.table.map((row, index) => (
               <tr key={index}>
                 {header.map((header, index) => (
-                  <td className="p-2 text-center border" key={index}>
+                  <td
+                    className="p-2 text-center border border-stone-500"
+                    key={index}
+                  >
                     {row[header].substr(0, 15)}
                   </td>
                 ))}

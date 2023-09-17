@@ -1,12 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Table from "./Table";
-import { get_table } from "../utils/data";
 import { MyContext } from "../context/context";
 
 function Output() {
-  const { output } = useContext(MyContext);
+  const { output, dark } = useContext(MyContext);
   return (
-    <div className="px-4 bg-[#f9fafc] h-72">
+    <div
+      className={` ${
+        dark === true ? "bg-[#1f2023]" : " bg-[#f9fafc]"
+      } px-4 h-[300px] border border-stone-500`}
+    >
       <div className="pt-2 pb-1 text-lg font-bold border-b">Output</div>
       <div className="py-2">
         {output === "" ? (

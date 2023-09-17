@@ -29,12 +29,6 @@ const get_default_query = () => {
 const get_table_names = () => {
   return ["customers", "order"];
 };
-const get_full_table = (table_name, start, end) => {
-  return [
-    { name: "customers", table: table1.slice(0, 100) },
-    { name: "order", table: orders.slice(0, 100) },
-  ];
-};
 const get_size = (table_name) => {
   if (table_name == "customersquery") {
     return customersquery.length;
@@ -44,7 +38,6 @@ const get_size = (table_name) => {
   } else if (table_name == "order") return orders.length;
 };
 const get_table = (table_name, start, stop) => {
-  console.log(start, stop);
   if (table_name == "customersquery") {
     return { name: "customersquery", table: customersquery.slice(start, stop) };
   } else if (table_name == "ordersquery")

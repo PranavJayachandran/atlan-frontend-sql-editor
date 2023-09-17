@@ -8,17 +8,17 @@ function App() {
   const [currentQuery, setCurrentQuery] = useState(get_default_query());
   const [output, setOutput] = useState("");
   const [historyQueries, setHistoryQueries] = useState([]);
-  const context = useMemo(
-    () => ({
-      currentQuery,
-      setCurrentQuery,
-      historyQueries,
-      setHistoryQueries,
-      output,
-      setOutput,
-    }),
-    [currentQuery, historyQueries, output]
-  );
+  const [dark, setDark] = useState(false);
+  const context = {
+    currentQuery,
+    setCurrentQuery,
+    historyQueries,
+    setHistoryQueries,
+    output,
+    setOutput,
+    dark,
+    setDark,
+  };
   return (
     <MyContext.Provider value={context}>
       <Suspense fallback={<div>Loading ...</div>}>

@@ -4,14 +4,18 @@ import { MyContext } from "../context/context";
 
 const Queries = () => {
   let queries = get_queries();
-  const { setCurrentQuery, setOutput } = useContext(MyContext);
+  const { setCurrentQuery, setOutput, dark } = useContext(MyContext);
   return (
-    <div className="mx-6  h-full  items-center py-4 flex flex-col gap-4 border-b">
+    <div className="mx-6 -mt-14 items-center py-4 flex flex-col gap-4 border-b border-stone-500">
       <div className="font-bold underline">Queries</div>
       <div className="flex flex-col gap-2">
         {queries.map((query, index) => (
           <button
-            className="bg-stone-100 px-2 rounded-xl text-xs py-2 text-[#0047d1] text-left text-sm"
+            className={`${
+              dark === true
+                ? "bg-stone-800 text-[#01c3d1]"
+                : "bg-stone-100 text-[#0047d1]"
+            } px-2 rounded-xl text-xs py-2  text-left text-sm`}
             onClick={() => {
               setCurrentQuery(query);
               setOutput("");
