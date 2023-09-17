@@ -11,7 +11,7 @@ const Editor = () => {
   const { dark } = useContext(MyContext);
   return (
     <div
-      className={`font-Nunito ${
+      className={`h-screen overflow-auto font-Nunito ${
         dark === true ? "text-white bg-[#1f2023]" : ""
       }`}
     >
