@@ -1,5 +1,4 @@
-import React, { useContext } from "react";
-import { get_table } from "../utils/data";
+import React, { useContext, useEffect, useState } from "react";
 import { MyContext } from "../context/context";
 
 function Edit() {

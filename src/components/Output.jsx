@@ -13,7 +13,7 @@ function Output() {
           <div>Run the query for output</div>
         ) : (
           <div>
-            <Table table={get_table(output)} />
+            <Table table={output} />
           </div>
         )}
       </div>

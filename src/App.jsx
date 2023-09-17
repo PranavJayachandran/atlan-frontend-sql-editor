@@ -8,7 +8,6 @@ function App() {
   const [currentQuery, setCurrentQuery] = useState(get_default_query());
   const [output, setOutput] = useState("");
   const [historyQueries, setHistoryQueries] = useState([]);
-
   const context = useMemo(
     () => ({
       currentQuery,

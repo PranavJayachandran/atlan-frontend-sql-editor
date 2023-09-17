@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { get_tables } from "../utils/data";
+import { get_table_names } from "../utils/data";
 import Table from "./Table";
 
 function Tables() {
-  const [tables, setTables] = useState(get_tables());
-  useEffect(() => {
-    console.log("TAble re");
-  });
+  let tables = get_table_names();
   return (
     <div className="">
       <div className="border-b px-4 ">
