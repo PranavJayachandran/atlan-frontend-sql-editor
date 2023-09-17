@@ -1,4 +1,4 @@
-# :computer: Atlan Frontend Task: Mastering SQL Queries
+# :computer: Task - Atlan Frontend Engineer
 <strong> Link to the application: https://atlan-frontend-sql-editor.vercel.app/</strong>
 <br>
 
